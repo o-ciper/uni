@@ -1,0 +1,804 @@
+
+				<!DOCTYPE html>
+				<html>
+					<head>
+						<meta charset="UTF-8">
+						<meta name="viewport" content="width=device-width, initial-scale=1" />
+						<link rel="stylesheet" href="pluginAssets/katex/katex.css"><script type="application/javascript" src="pluginAssets/mermaid/mermaid.min.js"></script><script type="application/javascript" src="pluginAssets/mermaid/mermaid_render.js"></script><link rel="stylesheet" href="pluginAssets/highlight.js/atom-one-light.css">
+						<title>Dil ve Edebiyat Öğretimi</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">Dil ve Edebiyat Öğretimi</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		strong {
+			color: #000000;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+		::-webkit-scrollbar {
+			width: 7px;
+			height: 7px;
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(100, 100, 100, 0.3); 
+			border-radius: 5px;
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(100, 100, 100, 0.7); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to precvent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		.not-loaded-resource img {
+			width: 1.15em;
+			height: 1.15em;
+			background: white;
+			padding: 2px !important;
+			border-radius: 2px;
+			box-shadow: 0 1px 3px #000000aa;
+		}
+
+		a.not-loaded-resource img {
+			margin-right: .2em;
+		}
+
+		a.not-loaded-resource {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 100vh;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+.mermaid { background-color: white; width: 640px; }
+/* For styling the rendered Markdown */
+
+body {
+    font-size: 1.1rem;
+}
+
+@media print {
+    body {
+        font-size: 1.1rem;
+    }
+}
+
+                @media screen 
+                and (min-device-width: 1200px) 
+                and (max-device-width: 1600px) 
+                and (-webkit-min-device-pixel-ratio: 1) { 
+                    body {
+                        padding: 2vh 20vw;
+                    }
+                }
+
+</style><div id="rendered-md"><h1 id="in-another-country">In Another Country</h1>
+<h3 id="httpswwwenotescomtopicsanother-country"><a data-from-md title='https://www.enotes.com/topics/another-country#' href='https://www.enotes.com/topics/another-country#'>https://www.enotes.com/topics/another-country#</a></h3>
+<h2 id="summary">Summary</h2>
+<p>In Another Country&quot; is a short story by Ernest Hemingway, a group of wounded soldiers, one American and five Italians, bond while going through physical therapy together.</p>
+<ul>
+<li>The young soldiers compare medals, with one of the Italians and the American commiserating over the fact that they were injured prior to being able to show their valor in battle.</li>
+<li>The Major, the most mature of the Italians, acts as a mentor figure for the others. He teaches the American how to speak Italian.</li>
+<li>The Major's wife dies and he lashes out at the other men, but then apologizes and goes into mourning.</li>
+</ul>
+<p>Ernest Hemingway’s “In Another Country” describes the relationships that develop in Milan among an American and five Italian soldiers who have been wounded and are receiving physical therapy. The story is told from the perspective of the American. The townspeople, with the exception of the café girls, resent the young men because they are officers; this resentment, in addition to the young soldiers’ war experiences, sets them apart from the street life in Milan.</p>
+<p>Within their group, however, there are also differences. The American has received a medal for his accidental war injury. Three young Italians from near Milan, in contrast to the American, have received wounds and medals because of bravery in battle. Another young Italian from a good family was wounded after only one hour on the front line. The American feels close to this young man because his bravery could not be tested. After cocktails, the American thinks that he might have done all the things that the Italians did to receive their citations. However, he knows that he “would never have done such things” and acknowledges that he is “very much afraid to die.”</p>
+<p>All the wounded men go to the hospital every afternoon to use machines for physical therapy. The doctor assures the American that he will again play football even though his knee does not bend. An Italian major, who used to be the greatest fencer in Italy before he was wounded, befriends the American, assisting him in learning to speak Italian grammatically. Although the youth of the American and the Italians is emphasized, the major seems to be more mature. Unlike the three young “hunting-hawks,” the major does not “believe in bravery.”</p>
+<p>Near the conclusion of the story, the major’s young wife suddenly dies. He is distraught and lashes out at the American but then apologizes and tells him of his loss. After three days of mourning, the major returns to the hospital wearing a black band on his sleeve.</p>
+<h3 id="httpswwwenotescomhomework-helpwhat-main-conflict-rising-action-climax-falling-645"><a data-from-md title='https://www.enotes.com/homework-help/what-main-conflict-rising-action-climax-falling-645' href='https://www.enotes.com/homework-help/what-main-conflict-rising-action-climax-falling-645'>https://www.enotes.com/homework-help/what-main-conflict-rising-action-climax-falling-645</a></h3>
+<h2 id="what-is-the-main-conflict-rising-action-climax-falling-action-and-resolution-of-the-story-in-another-country-by-ernest-hemingway">What is the main conflict, rising action, climax, falling action, and resolution of the story &quot;In Another Country&quot; by Ernest Hemingway?</h2>
+<h4 id="1-jason-lulos-certified-educator">1) JASON LULOS | CERTIFIED EDUCATOR</h4>
+<p>The main conflict in this story, in general, is the struggle of the soldiers in dealing with the traumatic experiences of the war. The more particular conflict with the American (the narrator) includes the experience of the war but also focuses on his feelings of inadequacy and alienation. He feels that his friends are more worthy of their medals than he is of his own. He is, of course, &quot;in another country&quot; and perhaps feels an even greater sense of alienation because of that. He looks to the major for some wisdom or hope, but the major is largely cynical.</p>
+<p>The rising action deals mainly with the American's interaction with the major. Although it is not explicitly stated, the American seems to be looking for a bit of hope or some kind of way to put the war, and a return to normal life, into a decent perspective. The dialogue becomes more intense when the major warns the American to avoid marriage. He loses his temper at the climax. The American realizes that the major is overcome with cynicism and grief. With the falling action, the American learns that the major has lost his wife. The American continues to observe the major, who keeps using the machines despite his inability to believe in or hope for a recovery.</p>
+<p>So, what is the resolution? The story ends with this seemingly depressing scene. On one hand, the major seems completely inconsolable. On the other hand, given that he continues to use the machines, he shows great perseverance. Perhaps the American thinks this is bravery: to keep trying even if you think a situation is hopeless. This might also be a comment on the war itself. Soldiers go to war, no matter how hopeless the situation is. Is it bravery or futility? (Or both?) The resolution of the story is the American trying to understand all of this. The ending is ambiguous, and this makes it difficult and interesting to come up with an interpretation.</p>
+<h4 id="2-bridgett-sumner-ma-certified-educator">2) BRIDGETT SUMNER, M.A. | CERTIFIED EDUCATOR</h4>
+<p>Because &quot;In Another Country&quot; is a work of Modernism, a movement that eschewed traditional short story structure, the story lacks an exposition, and arguably, a conclusion.  Modernist stories sought to capture the fragmentary nature of life in the recent aftermath of WWI. But, to answer the question:</p>
+<p>Main conflict: Injured soldiers have a difficult time coming to terms with their personal losses in a war that had an extremely depersonalizing effect on its veterans.</p>
+<p>Rising action: The narrator and the other injured soldiers come to doubt that the physical therapy machines will heal their physical injuries and find the assurances of the doctors that they will be &quot;better than ever&quot; to be hollow.</p>
+<p>Climax:  The major erupts, &quot;Don't argue with me!&quot; He removes his withered hand from the physical therapy machine and demands that the attendant turn it off. His outburst is fueled by the conversation about whether a man should marry, because he has just lost his wife.</p>
+<p>Falling action: The falling action is found in the major's tragic declaration, &quot;I cannot resign myself,&quot; as his final words about his emotional state in the wake of losing his wife (in addition to all else he last lost).</p>
+<p>Resolution: Because this is a Modernist story, there isn't really a tidy resolution. Readers are instead left with the disquieting feeling that the men at the Milan clinic will continue to live with their disillusionment and devastation.</p>
+<h3 id="httpswwwenotescomhomework-helpwhat-major-theme-story-another-country-67627"><a data-from-md title='https://www.enotes.com/homework-help/what-major-theme-story-another-country-67627' href='https://www.enotes.com/homework-help/what-major-theme-story-another-country-67627'>https://www.enotes.com/homework-help/what-major-theme-story-another-country-67627</a></h3>
+<h2 id="what-is-the-major-theme-in-the-story-in-another-country">What is the major theme in the story &quot;In Another Country&quot;?</h2>
+<p>There are several themes that are intertwined all relating to the effects of war on the human body and spirit.  In a hospital in Milan, Italy, soldiers wounded in action during WWI are recovering.  At this hospital, the wounded are treated with new advances in physical therapy, they share the experience of having faced death and survived, one of the main themes of the story.</p>
+<p>The theme of courage or cowardice is also examined through the perspective of each man's sacrifice.  The narrator has a leg wound, he receives physical therapy for his injury while an Italian Major's hand has been injured, which will likely mean that he will never fence again. Is a hero defined by his desire to charge into war without care for his own life, only concerned with fighting the good fight?  Is it wrong to want to survive, and to hold back a little and be protective of your life?  Is this what defines a coward?</p>
+<p>The atmosphere of the hospital, created by the doctor, who tries to convince the men that these new machines can transform an injury and restore function, offers a view of another theme, dignity and the human condition.  Even though the doctor shows them before and after pictures, the men don't believe the machines will actually work.</p>
+<p>Hemingway is very gifted as depicting the loss and loneliness of these wounded soldiers, especially the narrator who is literally in another country.  He witnesses the event when the proud Italian Major, so stoic with his injury receives news that his young wife has died after a brief illness. Here Hemingway brings in a sense of loss, so deep that the Major loses his will or desire to understand life.  Life for him is meaningless.</p>
+<blockquote>
+<p>&quot;The major’s resulting understanding of life’s cruel lack of meaning puts him in ‘‘another country’’ from the younger, still somewhat idealistic narrator. The mind set of the major is both alien to him and lonely, yet it is inevitable to all human beings. After all, the story suggests, attempts to avoid loss are only temporary.&quot;</p>
+</blockquote>
+<h3 id="httpswwwenotescomhomework-helpwhat-is-the-message-of-the-story-in-another-327799"><a data-from-md title='https://www.enotes.com/homework-help/what-is-the-message-of-the-story-in-another-327799' href='https://www.enotes.com/homework-help/what-is-the-message-of-the-story-in-another-327799'>https://www.enotes.com/homework-help/what-is-the-message-of-the-story-in-another-327799</a></h3>
+<h2 id="what-is-the-message-of-the-story-in-another-country">What is the message of the story &quot;In Another Country&quot;?</h2>
+<h4 id="1-mwestwood-ma-certified-educator">1) MWESTWOOD, M.A. | CERTIFIED EDUCATOR</h4>
+<p>As a Modernist story, Hemingway's &quot;In Another Country&quot; reflects the increasing sense of the uncertainty of the human experience and the apparent meaninglessness of life.  The narrative begins with odd lines that reflect these themes,</p>
+<blockquote>
+<p>In the fall the war was always there, but we did not go to it any more.</p>
+</blockquote>
+<p>The narrator and five Italian soldiers go to a hospital in Milan where they receive therapy for war-related injuries. However, the American soldier who is the narrator finds himself unlike the Italians in more than nationality.  For one thing, he has acquired his medal from an accidental injury, rather than one from battle.  But, despite their differences, there is a detachment that describes the men in their sense of unity because they have shared in the war experience.</p>
+<p>The major, whose injured hand has now withered, comes every day regularly despite his not believing in the therapy machines.  Nevertheless, he adheres to form and does what is expected of him.  For, this is all he can do because his wife has died and &quot;he did not believe in the machines.&quot; In fact, he is rather nihilistic, not believing in much of anything and telling the narrator that a man should not marry because he &quot;will lose everything&quot; as the major has done recently.  But, in the face of this all, the major retains his professionalism; he is the true Hemingway hero, believing in nothing, but out of this nothing, he restores order and control. The message of Hemingway's story, then, is that in the midst of all the false hopes of machinery and war, man must create his own ordered existence out of his new comprehension of the meaningless of so much in life.  He must retain his own &quot;essence&quot; and his sense of identity as a man, in creating his own life--an Existentialist theme.</p>
+<h4 id="2-bruce-bergman-certified-educator">2) BRUCE BERGMAN | CERTIFIED EDUCATOR</h4>
+<p>This story can be related to the famous first line of Tolstoy's novel, Anna Karenina.</p>
+<blockquote>
+<p>“Happy families are all alike; every unhappy family is unhappy in its own way.”</p>
+</blockquote>
+<p>Hemingway's story explores the isolation of several individuals who have been injured in war. Though some of the men band together as a result of their injuries, two men find themselves isolated. Their isolation is not of one kind, however. The isolation of each individual is distinct. They are all isolated in their own way.</p>
+<p>The American narrator experiences his own special isolation as does the major who befriends him.</p>
+<p>This notion underpins the entire story as the men find themselves suffering from more than physical pain of injury. They suffer also from the emotional impact of isolation, responding in various ways to the various modes of isolation they suffer.</p>
+<p>We can read this aspect of the story as relating to the human condition in general. Those who are unwell are unwell in their own way and in such a way as to become isolated.</p>
+<p>The most poignant example of isolation comes in the character of the major. He, like the narrator, is struggling to undergo the rehabilitation treatments on the machines and he becomes friendly with the narrator.</p>
+<p>Despite the things these two men share in common, which are significant, the major suffers from the unexpected loss of his wife. This cuts him off from the narrator, as the major suffers from his own special emotional injury, which the narrator cannot understand.</p>
+<h3 id="httpswwwenotescomhomework-helpwhat-mood-story-in-another-country-128233"><a data-from-md title='https://www.enotes.com/homework-help/what-mood-story-in-another-country-128233' href='https://www.enotes.com/homework-help/what-mood-story-in-another-country-128233'>https://www.enotes.com/homework-help/what-mood-story-in-another-country-128233</a></h3>
+<h2 id="what-is-the-mood-of-the-story-in-another-country">What is the mood of the story, &quot;In Another Country&quot;?</h2>
+<h4 id="1-bruce-bergman-certified-educator">1) BRUCE BERGMAN | CERTIFIED EDUCATOR</h4>
+<p>Hemingway's story of physical injury and emotional loss is a somber short story that successfully conveys a mood characterized by grief and suppressed sentimentality and a sense of subterranean angry refusal to accept loss. As a result of this dual sensibility, the mood of &quot;In Another Country&quot; might be described as one of fragile calm.</p>
+<p>In keeping with the norms of describing mood with emotional and psychological terms, we might apply depressed, detached or remote to characterize the mood of this Hemingway story. Maybe the best term to use here, however, is afflicted.</p>
+<p>While the turmoil experienced by the characters is internal, their injuries come from outside of themselves. They are affected by a brutal world and thus suffer the afflictions of that brutality and of the indifference of events.</p>
+<p>The robotic methods of physical therapy that are featured in the story parallel the purposeful indifference that these two characters cultivate in regards to their injuries. They are literally going through the motions of recovery by the end, seemingly as far removed from any hope for true recovery as they are from the hope for glory in battle.</p>
+<blockquote>
+<p>There was a time when none of us believed in the machines, and one day the major said it was all nonsense.</p>
+</blockquote>
+<p>The protagonist, like the major, is experiencing rather severe alienation. The protagonist is far from home, having been injured during war in a foreign country. The major is from Italy, and so is at home in the country, but in addition to having lost some of his physical abilities to injury, the major also loses his wife.</p>
+<blockquote>
+<p>&quot;He cannot marry. He cannot marry,&quot; he said angrily. &quot;If he is to lose everything, he should not place himself in a position to lose that. He should not place himself in a position to lose. He should find things he cannot lose.&quot;</p>
+<p>He spoke very angrily and bitterly, and looked straight ahead while he talked.</p>
+</blockquote>
+<p>The mood of the story is charged, ultimately, with a tension that animates the sense of alienation and loss and poses that isolation as a sort of existential suffering. In order to live fully and with joy, one must take the chance that one's joy can be taken away.</p>
+<p>As much as the narrative may strive to suppress the emotional nature of this insight, it also presents the insight as the central motif of the story. Hemingway gives us a picture of two kinds of romance (one of war and one of love) and suggests that despite the some nobility in the pursuit of romantic notions, deep suffering is unpleasant and, if still noble, bereft of the ephemeral hopefulness that initiated the pursuit.</p>
+<h4 id="2-ms-mcgregor-certified-educator">2) MS-MCGREGOR | CERTIFIED EDUCATOR</h4>
+<p>One of the first things you notice in the story is the loneliness of the characters. This loneliness is reinforced by the setting of the story. First, it is told by an American who is isolated in an Italian hospital. The hospital itself is located &quot;across a bridge&quot; from the town. When the officers go to the town, they are not well-liked. This separates the main character even further. Finally, notice the title of the story &quot;In Another Country&quot;. The narrator is in a strange country, and has even been taken away from the war he came to fight. All of this leads to a mood of loneliness and sadness.</p>
+<h3 id="httpswwwenotescomhomework-helpwhat-significance-setting-another-country-660719"><a data-from-md title='https://www.enotes.com/homework-help/what-significance-setting-another-country-660719' href='https://www.enotes.com/homework-help/what-significance-setting-another-country-660719'>https://www.enotes.com/homework-help/what-significance-setting-another-country-660719</a></h3>
+<h2 id="what-is-the-significance-of-the-setting-in-hemingways-short-story-in-another-country">What is the significance of the setting in Hemingway's short story &quot;In Another Country&quot;?</h2>
+<h4 id="1-bridgett-sumner-ma-certified-educator">1) BRIDGETT SUMNER, M.A. | CERTIFIED EDUCATOR</h4>
+<p>The descriptions of setting that Hemingway employs from the beginning of the story hint of the story's dark themes. &quot;It was a cold fall and the wind came down from the mountains&quot; situates the opening scene, as do the animal carcasses hanging &quot;stiff and heavy and empty&quot; outside the shops in the streets the narrator walks. The narrator notes that the days are short and &quot;the dark came very early.&quot; The setting of the fall, and the dark, with visual associations of death surrounding him (he also notes that funeral processions often began from the hospital's courtyard), creates a bleak environment in which to summon the will to heal and return to a life interrupted by war.</p>
+<p>The story's title is symbolic; the narrator is an American marooned in a Milanese hospital and is not well enough to return home or to the front. Both places represent an uncertain future. He lives in a state of limbo, a symbolic &quot;other&quot; country as he waits to recover physically and emotionally from the war that has injured him and the other men.</p>
+<h4 id="2-santos-oconnell-certified-educator">2) SANTOS O'CONNELL | CERTIFIED EDUCATOR</h4>
+<p>The setting in Ernest Hemingway’s short story “In Another Country” is significant because Nick Lyons is a soldier who is literally and figuratively a man without his country. Lyons, a soldier who is wounded in the war, ends up in Milan. Milan is near the front line fighting but he feels his is “in another country” knowing he will never return to action. Due to his injury, Lyons, is undergoing rehabilitation, on his wounded leg, along with Italian soldiers at a hospital in the city. He is far from his home in America, away from the fighting in Italy, and an outsider in the group of men, which makes him a man &quot;in another country.”</p>
+<p>The group of men walk through the streets of Milan each day until they arrive at the hospital. Hemingway reiterates that it is cold with snow, and &quot;darkness comes early.&quot; This is not an uplifting setting but rather it points to the desolation that Nick Lyons is feeling.</p>
+<p>During their time at the hospital, the Italian men find out that Lyons received his medal for his injury not for the valor associated with his fighting. Upon learning this, the men look at Lyons in a different way, and he is ostracized.</p>
+<p>The men have to walk through the “Cova” on the way back to their sleeping quarters. The “Cova” is a raucous part of town in which the young men and women congregate, but once again, the soldiers are excluded and often find themselves walking in the streets to avoid the crowds. They do not belong.</p>
+<p>As a setting, the hospital itself contributes to the feeling of hopelessness. The soldiers are subjected to experimental treatments while they are filled with false promises of a return to health. The walls are void of pictures until the Major’s wife dies. When he returns, there are pictures of people who have received successful treatments. This does not phase the Major as he stares blankly out the window knowing that his hand will never be functional again.</p>
+<p>In each instance, Hemingway uses the setting to emphasize Nick’s situation of being alone and injured, with no true purpose in life now that his days as a soldier were cut short.</p>
+<h3 id="httpswwwenotescomhomework-helpwhat-ironies-hemingways-short-story-another-175065"><a data-from-md title='https://www.enotes.com/homework-help/what-ironies-hemingways-short-story-another-175065' href='https://www.enotes.com/homework-help/what-ironies-hemingways-short-story-another-175065'>https://www.enotes.com/homework-help/what-ironies-hemingways-short-story-another-175065</a></h3>
+<h2 id="what-are-the-ironies-in-hemingways-short-story-in-another-country">What are the ironies in Hemingway's short story &quot;In Another Country&quot;?</h2>
+<h4 id="david-morrison-certified-educator">DAVID MORRISON | CERTIFIED EDUCATOR</h4>
+<p>There's great irony in the opening line of the story: &quot;In the fall the war was always there, but we did not go to it any more.&quot; In other words, war and its effects are ever-present for the injured soldiers, even though they're no longer able to participate in the conflict.</p>
+<p>The ironic opening line sets the tone for the discrepancy between the heroism and courage that the soldiers displayed in battle, and the way they see themselves as cowardly and inadequate, no longer real men. To other people, the soldiers' wounds and bright, shiny medals exemplify enormous bravery. But the men themselves are not proud of their achievements: quite the opposite. Because of the immense futility and sense of hopelessness they feel, they regard their endeavors on the battlefield as ultimately in vain.</p>
+<h4 id="2-sol-gandy-certified-educator">2) SOL GANDY | CERTIFIED EDUCATOR</h4>
+<p>The narrator of Hemingway's &quot;In Another Country&quot; is a wounded American soldier rehabilitating in Milan during World War I. While never named, the soldier is most probably Nick Adams, who was a consistent character in many of Hemingway's short stories. There are three good examples of situational irony and one example of verbal irony in the story. Situational irony occurs when an event or situation contradicts the expectations of the reader. Verbal irony occurs when words are used to suggest the opposite of what is meant.</p>
+<p>The narrator often goes out to a cafe called the Cova with three other wounded Italian soldiers. Two of the men have the same medals as the narrator but it is revealed later that the medals were awarded to the narrator simply because he was American and after that they treated him differently because, presumably, they had seen significant combat action while the narrator had been wounded by &quot;accident&quot;:</p>
+<blockquote>
+<p>I was a friend, but I was never really one of them after they had read the citations, because it had been different and they had done very different things to get their medals.</p>
+</blockquote>
+<p>It is ironic that the narrator should receive the same medals for doing much less in the war than the two Italian soldiers. Another ironic situation involves the boy who wore the &quot;black silk handkerchief&quot; who had specifically trained to be a career soldier and had gone from a military academy to the front line and had been wounded within an hour after arriving.</p>
+<p>Verbal irony involves the Major who often talks to the narrator while they are working on the rehabilitation &quot;machines.&quot; When the narrator tells the Major he hopes to be married one day, the Major angrily replies, &quot;The more of a fool you are...A man must not marry.&quot; It is ironic because the Major himself had recently been married upon his return from the war. He had been quite happily married until his wife suddenly died of pneumonia. Also ironic is the fact that the Major survived the atrocities of war, yet his young wife died after being &quot;sick only a few days.&quot;</p>
+<h4 id="3-michelle-p-ossa-ma-certified-educator">3) MICHELLE P. OSSA, M.A. | CERTIFIED EDUCATOR</h4>
+<p>You may get different answers but in general the biggest irony is how, despite the self-discipline, strength and courage of the soldier, it is not he who takes control of the war. In fact, it is the War takes control of the soldier, and of itself.</p>
+<p>This is illustrated with the major. He is the anchor of the story, and the man who everyone looks up to for his bravery, strength and courage. His character exemplifies the irony of War: He has lost control of all he had.</p>
+<p>He refuses to believe that a machine can fix his hand, he refuses to cry over his wife's sudden death, and he refuses to accept any advice from the narrator, or the other soldiers. And yet, he exemplifies how War takes control, and not the soldiers.</p>
+<h3 id="httpswwwenotescomhomework-helpdiscuss-title-short-story-another-country-219127"><a data-from-md title='https://www.enotes.com/homework-help/discuss-title-short-story-another-country-219127' href='https://www.enotes.com/homework-help/discuss-title-short-story-another-country-219127'>https://www.enotes.com/homework-help/discuss-title-short-story-another-country-219127</a></h3>
+<h2 id="discuss-the-title-of-the-short-story-in-another-country">Discuss the title of the short story &quot;In Another Country.&quot;</h2>
+<h4 id="1-david-morrison-certified-educator">1) DAVID MORRISON | CERTIFIED EDUCATOR</h4>
+<p>Throughout the story, we are shown a number of &quot;countries,&quot; little worlds with their own unique codes, rules and standards of behavior. Each man lives in &quot;another country,&quot; so to speak, experiencing a profound sense of isolation despite outward similarities.</p>
+<p>All the men in the hospital are united in some extent through their common experiences of the war. They exist in a world of their own, constantly aware of the war raging in the world outside, yet no longer directly involved in the conflict. And in that outside world, they are widely loathed and resented by the local townsfolk. The Cafe Cova provides a much-needed haven of peace for the recuperating soldiers. This is &quot;another country&quot; within the country at large.</p>
+<p>At the same time, the soldiers are separated from each other as men, occupying their own individual &quot;country.&quot; Some of the men brag about the medals they've won for bravery; the Italian major, however, does not. The soldiers with medals don't regard the American narrator as an equal because he hasn't gone through the same experiences of war. And the major, having lost his wife, now exists in a world of grief, one that separates him further from the other men in the hospital and from the world outside.</p>
+<h4 id="2-bmadnick-certified-educator">2) BMADNICK | CERTIFIED EDUCATOR</h4>
+<p>The title of this short story is explained through the theme of feeling alienated and alone. The literal meaning of how it feels to be separated from a familiar group is seen in the narrator. As an American in Italy, he feels out of place and alone. It is more than this, however, that separates the narrator and the other characters apart. Being &quot;in another country&quot; also means that the characters are separated according to their experiences in life. The narrator feels close to the major until the major learns of his wife's death. Due to this loss, the major is alienated from the narrator because the narrator hasn't experienced this kind of loss yet. The narrator cannot understand what the major is going through, so the two men are separated from each other.</p>
+<h4 id="3-james-kelley-certified-educator">3) JAMES KELLEY | CERTIFIED EDUCATOR</h4>
+<p>The title of Hemingway's short story can be understood, of course, on a literal level first. The main character, a wounded American soldier in World War I, is not at home in the United States. Rather, he's in Milan, Italy, some distance from where the war is still being fought.</p>
+<p>On a figurative level, the title expresses a sense of alienation or isolation of the main character. Again, he is not at home. The American is removed from all of the other people at the rehabilitation center (although he is certainly on friendly terms with the Major), the rehabilitation center is removed from the city of Milan, and so on.</p>
+<h3 id="httpswwwenotescomhomework-helpwhat-conflict-story-another-country-281528"><a data-from-md title='https://www.enotes.com/homework-help/what-conflict-story-another-country-281528' href='https://www.enotes.com/homework-help/what-conflict-story-another-country-281528'>https://www.enotes.com/homework-help/what-conflict-story-another-country-281528</a></h3>
+<h2 id="what-is-the-conflict-of-the-story-in-another-country-by-ernest-hemingway">What is the conflict of the story &quot;In Another Country&quot; by Ernest Hemingway?</h2>
+<h4 id="1-mwestwood-ma-certified-educator-2">1) MWESTWOOD, M.A. | CERTIFIED EDUCATOR</h4>
+<p>Loss and ruin pervade the narrative of Ernest Hemingway's story &quot;In Another Country.&quot; Clearly, the conflicts in which the injured soldiers find themselves are identity conflicts.</p>
+<p>These men are soldiers. Although &quot;the war was always there, ... we did not go to it any more,&quot; the narrator observes. Now they are &quot;in another country&quot; of the sick and injured as well as the alienated. The narrator observes,</p>
+<blockquote>
+<p>We were all a little detached, and there was nothing that held us together except that we met every afternoon at the hospital.</p>
+</blockquote>
+<p>He adds that when he and the other injured soldiers went to town past the &quot;wine-shops,&quot; they often had to jostle a crowd that &quot;disliked&quot; them and &quot;did not understand.&quot; The narrator is further alienated because he is an American and the Italian soldiers feel that he has been awarded his medal solely because he is from the US. Whereas his medal was given because of his accident, theirs were awarded for valiant acts in the face of imminent danger.</p>
+<p>One of the Italian soldiers, a major who was a fencing champion, has suffered even more than the others because his hand has been injured so severely that he will be unable to fence ever again. Even more devastating to him emotionally is the unexpected death of his young wife, whom he did not marry until he was &quot;invalided out of the war.&quot; One day he abruptly tells the narrator that the therapy machines are &quot;all nonsense.&quot; Also, he tells the American that a man must not marry:</p>
+<blockquote>
+<p>&quot;He cannot marry. He cannot marry,&quot; he said angrily. “If he is to lose everything, he should not place himself in a position to lose that. He should not place himself in a position to lose. He should find things he cannot lose.”</p>
+</blockquote>
+<p>This declaration is considered to be &quot;the philosophical center of the story and also one of the clearest expositions of Hemingway's code.&quot; (eNotes)</p>
+<p>Further, it is the major's dignity that makes him demand that the American speak grammatically when he converses in Italian with him. We also see the major's dignity in the way he carries himself straight and soldierly and comes regularly to the hospital even though he does not believe in the machines. And it is the major's dignity that makes him sit &quot;straight up in his chair&quot; with his withered hand thrust into the machine as he stares at the wall. Faced with irreconcilable losses and physical and spiritual ruin, the major as the code hero endures with his dignity and his adherence to form that he places above all else. In this manner, he resolves his conflicts as he continues to live with courage.</p>
+<h4 id="2-bruce-bergman-certified-educator-2">2) BRUCE BERGMAN | CERTIFIED EDUCATOR</h4>
+<p>The conflict of the story, &quot;In Another Country&quot;, is a subtle emotional conflict regarding the possibility of emotional rehabilitation.</p>
+<p>The narrator has been injured and is undergoing a rehabilitation program on machines. However, his injury is not entirely physical. The mechanized rehabilitation program is therefore somewhat ironic.</p>
+<p>The isolation the narrator feels cannot be overcome by machines and cannot be overcome by a recovery from his injury. Something critical that once connected the narrator to the world has been severed.</p>
+<p>We see a powerful example of this kind of severance in the major. The major suffers the loss of his young wife unexpectedly when she dies. This loss leads to bitterness and a further loss of dignity. The major becomes isolated from the narrator and cannot believe in the potential for recovery. He &quot;cannot resign&quot; himself to his loss and so is bound to continue to suffer from it, an emotional injury that cannot be overcome.</p>
+<p>The narrator's conflict is, essentially, the same as he struggles to see a path to emotional and psychological recovery after the loss of his confidence, his idealism, and his health.</p>
+<h3 id="httpswwwenotescomhomework-helpliterary-analysis-another-country-ernest-hemingway-695977"><a data-from-md title='https://www.enotes.com/homework-help/literary-analysis-another-country-ernest-hemingway-695977' href='https://www.enotes.com/homework-help/literary-analysis-another-country-ernest-hemingway-695977'>https://www.enotes.com/homework-help/literary-analysis-another-country-ernest-hemingway-695977</a></h3>
+<h2 id="what-is-a-literary-analysis-of-in-another-country-by-ernest-hemingway">What is a literary analysis of &quot;In Another Country&quot; by Ernest Hemingway?</h2>
+<h4 id="william-delaney-certified-educator">WILLIAM DELANEY | CERTIFIED EDUCATOR</h4>
+<p>&quot;In Another Country&quot; is an example of Ernest Hemingway's preference for writing stories based on personal experience. He was wounded in World War I while driving an ambulance. The persons and incidents depicted in the story &quot;In Another Country&quot; are evidently based on his recuperation period in Italy. Hemingway admired writers who derived their material from personal experience. One writer he greatly admired was Stephen Crane, whose story &quot;The Open Boat&quot; was based on his experience when forced to abandon ship while he was on an assignment to report on the Cuban Revolution.</p>
+<blockquote>
+<p>It was fifty-four hours before Crane and his companions were able to ride the heavy surf to shore at Daytona. One of his companions was drowned as they came to shore.</p>
+</blockquote>
+<p>Many of Hemingway's novels were based on personal experience. These include A Farewell to Arms, For Whom the Bell Tolls, and The Old Man and the Sea. Among the many stories based on personal experience are &quot;A Day's Wait,&quot; &quot;Old Man at the Bridge,&quot; and &quot;Hills Like White Elephants.&quot;</p>
+<p>Other writers who traveled a great deal and took risks in search of new settings, characters, and situations to use in their fiction included Rudyard Kipling, Somerset Maugham, and Graham Greene.</p>
+<h3 id="httpswwwenotescomtopicsanother-countryin-depth"><a data-from-md title='https://www.enotes.com/topics/another-country/in-depth#' href='https://www.enotes.com/topics/another-country/in-depth#'>https://www.enotes.com/topics/another-country/in-depth#</a></h3>
+<h2 id="style-and-technique">Style and Technique</h2>
+<p>Hemingway tells the story from the point of view of the young American, but in the objective or pseudo-third person. By telling the story from the American’s point of view yet not making him the narrator, Hemingway manages to objectify and distance the surface of the narrative without affecting the intimacy established between the reader and the American.</p>
+<p>The restraint with which the characters experience and voice their emotions is reinforced by the stylistic restraints that Hemingway imposes on his narrative. The central issue of the story, that courage is necessary for life as well as death, is not revealed until the end, when the doctor explains the tragedy of the death of the major’s young wife. The major’s intense grief at his wife’s death is conveyed by language that avoids labeling the emotion he feels: “The photographs did not make much difference to the major because he only looked out of the window.” The American may or may not understand the major’s bitter loss, but the reader inevitably perceives the major’s emotional wound and his courage in not giving up.</p>
+<p>Hemingway uses images to suggest the feelings of his characters; the emotions of the characters are conveyed indirectly by what they see. The mood or tone of the story is established in the first paragraph, in which the dead game outside the shops is described as “stiff,” “heavy,” and “empty.” The American’s awareness of death controls the way he experiences the streets of Milan. Death is a haunting refrain playing quietly under the surface of the narrative. Though the hospital is “very old and very beautiful,” the American observes: “There were usually funerals starting from the courtyard.”</p>
+<p>Irony is used quietly, but with force. The American comments that the wounded men are all very polite when they go to sit in “the machines that were to make so much difference.” Because these men are the first to use the machines, the photographs of restored limbs that the doctor first shows the men and then puts on the wall do not inspire great confidence. The machines are not likely to restore their limbs; in any case, nothing can ease the internal wounds epitomized by the suffering of the major.</p>
+<p>In spite of his lack of confidence in the machines, the major continues to come to sit in them, even after his wife’s death. His regular attendance is like his interest in having the young American learn grammar. The major’s discipline and courage in the face of almost certain defeat are powerfully underscored because they are never overtly mentioned.</p>
+<h2 id="historical-context">Historical Context</h2>
+<p>Ernest Hemingway’s story ‘‘In Another Country’’ takes place in a war hospital in Milan during World War I. The war began in 1914 when Archduke Franz Ferdinand, a member of the Hapsburg family, the rulers of what was then known as the Austro-Hungarian empire, was assassinated while on an official state visit to the city of Sarajevo in Bosnia. His killer was a young Bosnian Serb, Gavrilo Princip, a member of a secret underground organization who protested the Austro-Hungarian empire’s claim over their country. When the Austro-Hungarians demanded entrance to Bosnia so they could find and then bring to trial Ferdinand’s assassin, the Bosnian government refused, insisting they would conduct their own investigation. The Austro-Hungarians then declared war on Bosnia. Quickly, Germany allied with the Austro-Hungarian empire, while Russia France and Great Britain allied with Bosnia, with Italy soon to follow.</p>
+<p>The United States joined World War I at the end of 1917. A German submarine had torpedoed a British passenger ship, the Lusitania, claiming it secretly carried American munitions aboard. The United States denied this, but joined the fray when the British and French requested their assistance. Most American soldiers were initially stationed on the Western Front, in France. Believing the American army to be inexperienced and, according to Hemingway, ‘‘overfed and under trained,’’ the Germans immediately attacked. To much of the world’s surprise, the Americans, despite being outnumbered and lacking experience, fought off the German army, solidifying their reputation as a world military power. The United States and its allies won the war in 1918. About 118,000 American soldiers were killed in action, more than double the 55,000 lost in World War II a generation later.</p>
+<p>Hemingway wrote ‘‘In Another Country’’ while residing in Paris in 1926. There he lived among a circle of writers and poets, many of whom would go on to be among the most prominent literary figures of the century. Expatriates like himself, these authors included F. Scott Fitzgerald Sherwood Anderson John Dos Passos Thornton Wilder Ezra Pound e. e. cummings and Hart Crane, along with Gertrude Stein and her lover, Alice B. Toklas, whose salon was a common meeting ground for the group. Coined ‘‘The Lost Generation’’ by Stein, these writers came to Paris in search of inspiration and a new understanding of the boundaries and purpose of art. Malcolm Cowley, one of their clique, wrote about this period in his book Exile’s Return. A collection of Hemingway’s anecdotes of this experience was published posthumously under the title A Moveable Feast in 1964.</p>
+<h2 id="literary-style">Literary Style</h2>
+<h5 id="point-of-view">Point of View</h5>
+<p>All of the events that occur in ‘‘In Another Country’’ are told from the point of view of the story’s unnamed narrator, an American officer receiving physical therapy in a Milan hospital on his leg, which has been wounded at the front during World War I. The narrator is a young man, presumably about 19, the same age as the author when he also spent time in a Milan hospital, recovering from leg injuries received while working as an ambulance driver for the Red Cross. The events are filtered through the narrator’s perspective, therefore the first person ‘‘T’’ is used throughout. How these events affect the narrator, particularly those which are written about in the greatest detail, like the major’s disillusionment following the death of his wife, is not directly revealed. However, it is apparent that what he has witnessed has made a strong impact on him because he has chosen to recount the story so vividly. Readers may assume it is an older narrator who is telling the story, as it is written in the past tense.</p>
+<h5 id="objectivity">Objectivity</h5>
+<p>One of the most distinctive aspects of this story, and most of Hemingway’s literature, particularly his many stories about this same narrator—unnamed here, but known as Nick Adams elsewhere—is its objective tone. Though the story is told from the narrator’s perspective, how they affect him is never made explicit. Instead, each of the events is described almost in the way a journalist reports a newspaper story, with as little subjectivity, or personal interjection, as possible. One way this is achieved is by using very few adjectives. This is done to avoid manipulating the reader’s imagination. The specific details of each event are recorded in an objective way, leaving the readers to put the pieces together; this way readers can discover their own interpretation of what the events mean. This distinctive style, perfected by Hemingway, has been widely imitated and greatly praised, though it has its share of detractors as well.</p>
+<h5 id="existentialism">Existentialism</h5>
+<p>Existentialism is a philosophy concerned with the meaning of existence. One of the aspects of this philosophy is the isolation of the individual, a condition all human beings must face at some time. The Italian major comprehends this after the unexpected death of his wife to pneumonia. When he returns to the hospital to continue the machine treatments on his hand soon after her passing, the narrator observes the major struggle to maintain his previous soldierly posture as he stares out the window. It has been implied by scholars that, having lost his innocent belief that loss can be minimized through discipline and precision, what the major sees out that window is life’s vast emptiness. He is coming to terms with the fact that all connections are eventually lost, especially through death, and that life carries with it a sense of its own meaninglessness. This knowledge is one of the cornerstones of the existentialist philosophy, and it can be found in much of Hemingway’s literature.</p>
+<h5 id="symbolism">Symbolism</h5>
+<p>There are several examples of symbolism throughout the story. One such symbol is the window the major looks out of following the death of his wife. Previously, he looked at a wall while receiving his machine therapy. But, after his wife’s death, he stares out the window instead. The major, at this point, is no longer emotionally walled in; he is open, vulnerable. The window symbolizes this opening inside him. The machines also have symbolic significance. Though utilized by the patients, the men know that they are probably ineffective; yet, they still return to them day after day, following the regime their use requires. Humans each follow their own daily regimes, hoping that they, too, are useful, purposeful. However, the story suggests, this is unlikely. The machines are an external symbol of life’s probable futility, a condition which becomes apparent to the major after his tragic loss.</p>
+<h5 id="irony">Irony</h5>
+<p>Irony occurs when the outcome of an event contrasts the intention of what has come before it. A particularly strong example of this can be seen with the Italian major. He has lived his life carefully, following a strict military code which has helped him maintain emotional control even while having to confront death, his own and that of others, nearly every day while at war. He depends on this, believes it will save him from being unprepared for great loss. Ironically, this man who believes he is in control of his life, soon learns, via the death of his wife, that his composure, his military precision worn like armor, cannot protect him from personal tragedy. This irony changes his life, and brings out many of the story’s major themes.</p>
+<h3 id="httpswwwenotescomtopicsanother-countrycharacters"><a data-from-md title='https://www.enotes.com/topics/another-country/characters#' href='https://www.enotes.com/topics/another-country/characters#'>https://www.enotes.com/topics/another-country/characters#</a></h3>
+<h2 id="characters">Characters</h2>
+<h5 id="american-soldier">American Soldier</h5>
+<p>See Narrator</p>
+<h5 id="italian-major">Italian Major</h5>
+<p>The Italian major, a former fencing champion, is in the Milan hospital because his hand has been mangled in battle. A controlled military man, he is cynical about the machines that are used to rehabilitate his wounded extremity, and about the tales of bravery and heroism he hears from the young Italian officers. He befriends the narrator, who is also injured, and tutors him in Italian. The Italian major has recently married a young woman, something he would not do until he was injured—and therefore would not be sent into battle again. However, when his wife dies unexpectedly from pneumonia, the major loses his soldier-like composure, and weeps, not just for her death, but also, according to Earl Rovitt in his essay, ‘‘Of Human Dignity: ‘In Another Country,’’’ for his understanding that he must now confront the meaninglessness of life, one that has shown him that his strict military code could not protect him from life’s vulnerabilities.</p>
+<h5 id="major">Major</h5>
+<p>See Italian Major</p>
+<h5 id="majors-wife">Major’s Wife</h5>
+<p>Though the major’s wife never appears in the story (she is mentioned only in the second-to-last paragraph of the story), she plays a major role. A young, healthy woman, her sudden death from pneumonia leads the Italian major, her husband, to learn he cannot control life, a lesson which is also observed by the story’s young narrator.</p>
+<h5 id="narrator">Narrator</h5>
+<p>The narrator is a young American in Italy during World War I. Though unnamed, the narrator’s identity is assumed to be Nick Adams, an alter-ego for many of Hemingway’s semi-autobiographical short stories. The narrator is in an Italian hospital receiving therapy for his injured leg. He befriends several other officers with whom he shares the experience of facing death and surviving, and of getting decorated for their efforts. When the other soldiers learn that the narrator’s other medals are merely for his being an American, and not for acts of heroism or bravery, he becomes an outsider to their circle. Realizing that his fear of death would make him an unlikely member of their group in the future, the narrator befriends an Italian major whose hand is wounded, a man whose cynicism toward bravery does not alienate the narrator from him. The narrator senses their connection is lost, however, when the major unexpectedly loses his young wife to pneumonia. According to Laurence W. Mazzeo in his ‘‘Critical Survey of Short Fiction,’’ Nick comes to realize that ‘‘nothing of value can last in this world.’’</p>
+<h5 id="signor-maggiore">Signor Maggiore</h5>
+<p>See Italian Major</p>
+<h3 id="httpswwwenotescomtopicsanother-countrythemes"><a data-from-md title='https://www.enotes.com/topics/another-country/themes#' href='https://www.enotes.com/topics/another-country/themes#'>https://www.enotes.com/topics/another-country/themes#</a></h3>
+<h2 id="themes-and-meanings">Themes and Meanings</h2>
+<p>Still significant in the consciousness of the wounded men is the war, which represents both a challenge and a threat. Because of the war, the three young Italians with medals know that they are brave. In addition to representing a test, the war also heightens the soldiers’ awareness of death. The story opens with the line: “In the fall the war was always there, but we did not go to it any more.” The tall, pale Italian who has three medals is described as having “lived a very long time with death.” As a result, their experiences in the war have left them all “detached.”</p>
+<p>The nature of courage is one of the central themes of “In Another Country.” The American officer is afraid of dying and lies awake wondering how he will behave when he goes back to the front. His fear is contrasted with the bravery of the three young Italians who earned their medals: “The three with the medals were like hunting-hawks; and I was not a hawk.” The bravery of the three “hunting-hawks,” however, is also contrasted with the courage of the major, who is not a hunting-hawk. The American does not understand the major, but he does recognize that he “had been a great fencer” and that he does not “believe in bravery.” The major’s self-discipline and courage prompt him to befriend the young American. He insists that the American learn to speak Italian grammatically. The major’s concern about speaking Italian grammatically illustrates the importance he gives to “form,” to living in terms of a strict code of behavior.</p>
+<p>The major’s courage does not spring from the heedless self-confidence that often passes for bravery; he is willing to continue to try in spite of the likelihood of failure or defeat. Even though the major comes regularly to work with the therapy machines, he tells the doctor that he has no confidence in them.</p>
+<p>The major’s courage in the face of his wife’s death equals his courage in accepting his disability. The death of his wife is particularly tragic as she was very young and as the major had postponed their marriage until after he had been permanently disabled from his war wounds. The major’s courage in coping with his young wife’s death is contrasted with the bravery of the three “hunting-hawks” in facing danger. In addition, the major’s compassion (for the American) sets him apart from the others.</p>
+<p>Although war offers the challenge of living with death, those who do battle are not the only ones vulnerable to it: The death of the major’s young wife from pneumonia underlines the fact of human mortality. The major’s courage thus becomes a model of the heroism required to live.</p>
+<p>The source for the title “In Another Country” is Christopher Marlowe’s The Jew of Malta (1589), in which Friar Barnardine says to Barabas: “Thou hast committed—”; the sentence is finished ironically by Barabas, who says, “Fornication—but that was in another country/ And besides, the wench is dead.”</p>
+<p>The title thus suggests the detachment that the young men feel after living with death during the war. The conclusion of Barabas’s speech, “the wench is dead,” brutally reinforces the tragedy of the death of the major’s young wife. The irony of her death suggests the difficulty of living with courage.</p>
+<h3 id="themes">Themes</h3>
+<p>‘‘In the fall the war was always there, but we did not go to it anymore.’’ So begins Ernest Hemingway’s short story, ‘‘In Another Country.’’ The war he refers to is World War I; the setting is Milan, away from the scene of the fighting. The narrator is a young American man who is in the hospital to receive physical rehabilitation for the leg wounds he received while at the front. Sitting next to him is an Italian major, a champion fencer before the war, whose hand has been wounded and with whom the narrator speaks about life. At the story’s end, having learned of his wife’s death of pneumonia, the major must face the future knowing the machines cannot cure him of this different kind of injury.</p>
+<h5 id="dignity-and-the-human-condition">Dignity and the Human Condition</h5>
+<p>In the story, the young narrator has faced death and survived. This is also true of the Italian officers who, like the narrator, come to the hospital each day to receive therapy for the wounds they have received while at the front. The narrator learns about dignity and the human condition primarily through his interaction with an Italian major. While the young narrator is fearful of dying on the battlefield, the major seems to have made peace with this possibility. He knows he must do his duty in the dignified manner consistent with being a professional soldier and, more specifically, an officer. He is uninterested in the bravado expressed by the young decorated officers. Bravery requires acting on impulse, making snap decisions based on one’s emotions. The major instead depends on control and precision. One day, however, the major breaks his composure; while sitting at the machine intended to heal his injured hand, he becomes angry with the narrator’s hope to marry in the future, irately adding that the young American ‘‘should not place himself in a position to lose (everything). . . . He should find things he cannot lose.’’ The major then does the previously unthinkable; he breaks into tears. The narrator soon learns from a doctor that the major’s young and, presumably, healthy wife has suddenly died from pneumonia. When the major returns to the hospital, three days later—his first break in his regime of daily visits—he is a more openly vulnerable man. He sits dutifully at his machine, stands in an erect, soldierly manner, but now his dignified stance is more hard won. He has learned that life cannot be controlled, that it is filled with arbitrary tragedies, even off the battlefield, for which one may be unprepared. The major may have been prepared for his own death, like any good soldier, but his wife’s sudden passing leads him to confront life’s meaninglessness, an aspect of the human condition he, who has survived, must now struggle to face with dignity.</p>
+<h5 id="courage-and-cowardice">Courage and Cowardice</h5>
+<p>Not unconnected is the theme of courage and cowardice. While many heroes, particularly in American fiction, especially American films, are portrayed as stoic and unafraid, ‘‘In Another Country’’ depicts a more complex and humanistic type of courage. Following the unexpected loss of his wife, the major’s return to the hospital signifies his willingness to survive, even with his new awareness of chaos in the world and his inability to prevent being touched by it. His willingness to face life with this new and painful understanding can be seen as a definition of genuine courage, the kind of courage befitting a real hero. This truer, more human heroism even requires the initial shedding of tears, an act that is seen in some circumstances as a sign of cowardice.</p>
+<p>This definition of heroism contrasts with the more traditional kind of heroics, the kind that wins medals, displayed by the brash young Italian officers. These men are seemingly proud of their naive bravado; however, because they have not dealt with the emotional consequences of the violence they have faced, they have become ‘‘a little detached’’ and withdrawn.</p>
+<h5 id="alienation-and-loneliness">Alienation and Loneliness</h5>
+<p>This theme is expressed initially in the story’s title, ‘‘In Another Country,’’ which refers to being or feeling alienated from the comfort of the familiar, a circumstance which often leads to loneliness. In this story, the narrator is literally in another country, Italy, an ocean apart from his home, the United States; however, he is also apart in other ways. When he walks in the streets of Milan alongside the young Italian officers he is first accepted by, he knows the civilians who verbally abuse them do not understand what they, the officers, have faced. Though the officers and these native Milanese share the same streets, they are in ‘‘another country’’ from each other, separated by their differing life experiences. Once inside the warmth of the cafe, the narrator feels the loneliness this alienation causes disappear. Later, these same officers drift from him because they discover that some of his medals are for being an American, while theirs are for feats of bravery, acts the narrator knows his own fear of death would probably not permit him to perform. This leads to his being separate, in ‘‘another country,’’ from his former friends. Out of loneliness, the narrator maintains a friendship with the only member of the group who has not received a medal and, since he is too injured to return to battle, never will. The narrator likes to pretend this friend would be like him in battle, cautious and a little afraid. The narrator insists on imagining he and this young man are connected in this way to alleviate the loneliness he feels now that he has become alienated from the others. At the end of the story, the narrator becomes alienated from his new friend, the major, after the major experiences a loss that the narrator has not, the death of a wife to pneumonia. The major’s resulting understanding of life’s cruel lack of meaning puts him in ‘‘another country’’ from the younger, still somewhat idealistic narrator. The mind set of the major is both alien to him and lonely, yet it is inevitable to all human beings. After all, the story suggests, attempts to avoid loss are only temporary.</p>
+<h3 id="httpswwwenotescomtopicsanother-countrycritical-essays"><a data-from-md title='https://www.enotes.com/topics/another-country/critical-essays' href='https://www.enotes.com/topics/another-country/critical-essays'>https://www.enotes.com/topics/another-country/critical-essays</a></h3>
+<h2 id="critical-overview">Critical Overview</h2>
+<p>Hemingway’s spare, objective style has been widely imitated and adapted by many other writers. His choice of material, and his stoic, masculine way of dealing with issues of life, death, and love in a troubled, often violent world has made him a controversial figure. Though many admire his sparse prose, suggesting it reveals the inner workings of his macho male heroes, a share of scholars, feminists in particular, have criticized his work, arguing that rather than illuminating and critiquing the he-men behavior of his characters, he is, instead, embracing, even sentimentalizing it. They also complain that his female characters have less dimension than his male characters, and that they generally fall into two stereotypical categories, the saintly and the whorish, showing an underlying dislike of women in general. Hemingway supporters counter that he adores the women he writes about, almost to the point of idealization.</p>
+<p>His short story, ‘‘In Another Country’’ is one of his most popular; it is also one of his most anthologized. Like much of Hemingway’s work, it has been written about at great length. Forrest Robinson in his article ‘‘Hemingway’s Invisible Hero,’’ published on Essays in Literature argues against the notion that the story’s narrator is not ‘‘merely passive in his painful acceptance of his lack of bravery, and is respectful in his observance of the [Italian] major’s resignation to despair.’’ He goes on to say that the narrator is not really the story’s protagonist, which many assume, but that the Italian major is.</p>
+<p>‘‘In Another Country’’ is widely considered to be one of Hemingway’s serial, semi-autobiographical Nick Adams stories. In fact, when all the stories featuring Nick were published together as The Nick Adams Stories in 1972, ‘‘In Another Country’’ was included in the book. However, James Steinke, in his article ‘‘Hemingway’s ‘In Another Country’ and ‘Now I Lay Me,’’’ published in The Hemingway Review in 1985, argues that the story has been ‘‘mistakenly seen as one more contribution to composite of ‘Nick Adams.’’’ He also writes that the Nick Adams stories are not ‘‘fictionalized personal history,’’ as others claim. He uses a quote by the author himself to support his point: ‘‘When you first start writing stories in the first person, if the stories are made so real that people believe them, the people reading them nearly always think the stories really happened to you.’’</p>
+<p>In addition to having his work labeled fictionalized autobiography, Hemingway’s work has also led to the author being called such ‘‘critical classifying terms as Disillusioned Idealist, Realist, Naturalist, Existentialist and even—after Old Man and the Sea—Christian,’’ according to Richard Irwin in his essay, ‘‘Of War, Wounds, and Silly Machines: An Examination of Hemingway’s ‘In Another Country.’’’ Irwin goes on to say that the author may be a Naturalist, but that he is not a true Naturalist. He feels Hemingway is a Naturalist ‘‘in the sense that for him human destiny is largely controlled by factors which lie beyond the individual will and choice, and those factors do not operate at the behest of an ultimately beneficent divine being.’’ However, he feels that Hemingway can not be called solely a Naturalist because his work does not ‘‘reveal . . . sentimentality toward the hard aspects of the human condition . . . a belief in a benign, responsible creator [or] a keen awareness of the ‘forces’ which operate independently of man’s conscious will.’’ He also comments that Hemingway’s writing does not ‘‘assume a universe indifferent to the suffering of human beings,’’ and so does not fulfill the definition required to be considered a Naturalist.</p>
+<p>Despite the vast array of opinions surrounding the work of Ernest Hemingway his popularity and influence are still felt 35 years after his death. His position as one of the most distinctive and lauded writers of this century is assured, a title supported by a long list of devoted readers, the inclusion of his work in dozens of anthologies, and several of the most prestigious honors a writer can receive.</p>
+<h3 id="httpswwwenotescomtopicsanother-countrycritical-essaysessays-criticism"><a data-from-md title='https://www.enotes.com/topics/another-country/critical-essays/essays-criticism' href='https://www.enotes.com/topics/another-country/critical-essays/essays-criticism'>https://www.enotes.com/topics/another-country/critical-essays/essays-criticism</a></h3>
+<h2 id="critical-essays">Critical Essays</h2>
+<h3 id="the-code-in-hemingways-in-another-country">The Code in Hemingway’s “In Another Country”</h3>
+<p>A short story which illustrates Hemingway’s code is “In Another Country.” The purpose of this essay is to discuss Hemingway’s approach to the code and the code-hero as it appears in this story. It has been well pointed out that the majority of Hemingway’s true code-heros are older men, non-Americans, professional soldiers or sportsmen or gangsters of some sort.(1) In this story the Italian Major is a code hero of the type most admired by Hemingway, for he fulfills all the requirements of the type. In addition to providing us with an image of the perfect code hero, he serves as an example to the narrator of the story, who through the Major gains an insight into his own life and finds, perhaps, that he has been on the wrong track. This structure, where the narrator is the focus and protagonist of the story, and the code-hero is the teacher of the narrator, occurs frequently in Hemingway’s works. It has been termed the tutor-tyro type of story, in which the tyro is “literally initiated into a comprehension of certain mysteries that had been hidden from him; through the process of initiation, he loses an old self and gains a new one.”(2) The mystery in this case is the code.</p>
+<p>“In Another Country” takes place in Italy during the war. The first-person narrator, an American, visits the hospital daily for rehabilitation treatments, and spends the rest of his time with a group of Italians, drinking and talking about the war. At the hospital each day he sees an Italian Major whose hand has been injured, and who is receiving treatments. He was once a fencing champion. All of the Italians and the American says the narrator “felt held together by there being something that had happened that they, the people who disliked us, did not understand.”(3) The Major, whose treatments took place at the machine next to the American, is portrayed as being every bit the professional soldier. He insists that the American learn Italian grammar, with what has been called “considerable dignity and somewhat stuffy rectitude.”(4) Yet the most striking characteristic of the Major is his stoicism, his seeming acceptance of his wound and the pointless necessity of sitting daily in front of a machine which probably will not help his hand and in any case will never make it able to function effectively in fencing. The American is not aware that the Major is teaching him something about life until the end of the story.</p>
+<p>The part of the code which is most strongly stressed in this story deals with “the process of learning how to make one’s passive vulnerability (to the dangers and unpredictabilities of life) into a strong, rather than a weak position, and how to exact the maximum amount of reward (‘honor,’ ‘dignity’) out of these encounters.”(5) This is precisely the position of the Major at the end of the story. The Major asks the American if he is married and the American replies that he intends to marry. The Major suddenly and seemingly unreasonably becomes angry. “A man must not marry,” he insists. “If he is to lose everything, he should not place himself in a position to lose that. He should not place himself in a position to lose. He should find things he cannot lose.”(6) This is the philosophical center of the story and also one of the clearest expositions of the code. The Major, it is revealed, had just recently married, and his wife had died. The Major finally breaks down and cries. He admits “I am utterly unable to resign myself.”(7) As the story closes the narrator tells us that the Major does not come for his treatments for three days. When he returns, he wears a black armband. He submits to his treatment, and does nothing but look out the window. It has been noted in connection with the Major that “his adoption of a code of life does not preclude his exposure to the risks of the incalculable in spite of his angry cry of outrage. His commitment to love and his shock at his wife’s death have placed him ‘in another country’ than the one he has prepared to defend.”(8)</p>
+<p>Thus the code is revealed in this short story to be just a little more philosophical than we have come to expect. “It is meaninglessness—nada—that confronts the Major in full assault,”(9) and even the most professional code, practiced by the best tutor stands momentarily paralyzed by this void. The dignity of the Major, as he continues his life, is the prime lesson communicated to the narrator, and it is this image, of the Major submitting to the machine and staring out the window, with which we are left.</p>
+<h3 id="overview-of-in-another-country">Overview of “In Another Country”</h3>
+<p>One of the most often-discussed aspects of Ernest Hemingway’s writing is his distinctive style. Whereas many writers of his day were still heavily influenced by the verbose, extremely descriptive style of English and American authors of the nineteenth century such as Charles Dickens Jane Austen and Herman Melville Hemingway was not. His literature is free of the extensive use of adjectives common in the work of many earlier writers, and of many of his immediate contemporaries. As a result, his work has often been described as sparse, objective, and journalistic. It’s also been called original, so much so that even readers who would not consider themselves scholars can immediately recognize a book, a story, or even a paragraph that he has written without knowing beforehand that he was its author. His style is so singular, in fact, that to this day there is an international writing contest held every year in which writers are asked to submit a short story in his style. Knowing full well that the results will most likely be second rate, the contest is called the ‘‘Bad Hemingway Competition.’’ The winner is awarded a free trip to Italy which includes a complimentary dinner at Harry’s Bar in Venice, one of Hemingway’s old hangouts.</p>
+<p>The fact that Hemingway worked throughout his life as a journalist clearly influenced his spare prose style. In fact, before he had published any fiction, Hemingway, upon his graduation from high school, took a job as a junior reporter at the Kansas City Star. Only eighteen years old, and still developing his authorial voice, Hemingway was clearly inspired by the Star’s guidelines which demanded compression, selectivity and precision for their news stories. Though his background in news writing was an undisputed influence on his writing style, there is another strong influence that guided it as well: the movies. This is not too surprising; Hemingway was born just before the start of the twentieth century, the same time mass motion pictures were invented.</p>
+<p>At the time that Hemingway began writing prose seriously, just at the end of World War I in 1919, and up until the time he was considered an important writer some seven years later, movies were the most popular form of entertainment throughout the western world. This was more than three decades before television overtook motion pictures in popularity—in fact, television as a technology as we now know it had not yet been invented. Many people commonly went to the cinema several nights a week in the 1920s (even more so in the 1930s and early 1940s). The movies these large audiences were watching were, of course, silent movies.</p>
+<p>Films with synchronized sound were not introduced to mainstream audiences until 1927, when The Jazz Singer, which included several musical numbers with synchronized sound, revolutionized the industry. That film’s astronomical success led movie studios, within the year, to stop producing silent films. Because the sound technology was so new, these early ‘‘talkies’’ became more stage-bound, featuring longer scenes with actors clustered around flower vases and table lamps that hid strategically placed microphones. Movies had, for a time, lost their visual flair. The word overtook the image as the prime focus of filmmakers. Silent film, starting in the late ‘teens, and up to 1927 (the same years Hemingway began seriously writing fiction), had matured; film language, dependent on the visual image to tell its story (with the exception of a few inter titles for important dialogue), had hit what many film scholars consider an artistic peak that was not found again for many decades to follow.</p>
+<p>One of the ways in which the best silent films of the time communicated their narratives and the emotions that they wanted their audiences to experience while watching them was through a technique called ‘‘montage.’’ Montage is when several unrelated images are edited together to create a desired effect. For instance, if one sees an image of a man turning his head suddenly, then to one of a gun being aimed in his direction, to a shot of a tree falling in a nearby forest, the audience instinctively knows that the man has been shot, even without the sound of the gunshot. If we see several shots of an impatient crowd, followed by an image of a raised fist, we know that the fist represents the angry emotion of the mob without having to be told this. Hemingway makes subtle use this same montage technique in his writing.</p>
+<p>An example of this can be seen clearly in the story, ‘‘In Another Country,’’ especially the first paragraph. ‘‘In the fall the war was always there, but we did not go to it anymore. It was cold in the fall in Milan and the dark came very early. Then the electric lights came on, and it was pleasant along the streets looking in the windows.’’ This establishes the setting and context of the story. Hemingway follows with a series of images which collectively create a mood and develop the story’s themes. ‘‘There was much game hanging outside the shops, and the snow powdered the fur of the foxes and the wind blew their tails. The deer hung stiff and heavy and empty, and small birds blew in the wind and the wind turned their feathers.’’ We can feel the approaching winter through these details, and may start to subliminally sense that the details are also showing us, as opposed to telling us, that death, too, is approaching. Winter is the time when the life that bloomed in spring, thrived in summer, and weakened in fall, is taken away. We may also feel that a life-changing transition is also coming, and that, like the coldest of seasons, it will be a chilly reminder that the life we innocently enjoyed during the warmer months will be gone.</p>
+<p>This montage technique is also prominently used in the story’s important climactic sentences when the Italian Major returns to the hospital after hearing of his wife’s sudden death from pneumonia. ‘‘Then he came at the usual hour, wearing a black band on the sleeve of his uniform . . . there were large framed photographs around the wall, all sorts of wounds before and after they had been cured by the machines. In front of the machine the major used were three photographs of hands like his that were completely restored.’’ Hemingway then interjects his own equivalent of a silent film’s inter title, ‘‘I do not know where the doctor got them. I always understood we were the first to use these machines.’’ But the major, he tells us in the last sentences, is not moved by the photographs; instead, in the story’s final, telling image we are told that the major ‘‘only looked out the window.’’ Again, image builds upon image to create a final impression of existential despair, a message artfully expressed without being directly stated.</p>
+<p>Is it any wonder, then, that Hemingway’s works were quickly scooped up by movie studios? However, this did not occur until talkies were already in place and most of these adaptations, critics argue, lack much of the visual expressiveness present in Hemingway’s writing. In fact, the film version that is considered most successful on an artistic level is the first, A Farewell to Arms of 1932. Though it has its share of characters sitting in rooms talking, like most films of its period, even these scenes are punctuated with what one critic called ‘‘a strange, brooding expressionist quality,’’ which other adaptations of his writing lack.</p>
+<p>It’s important to note that Hemingway was clearly a filmgoer. According to his letters, published in a thick volume under the title, Ernest Hemingway: Selected Letters: 1917-1961, the author writes many times about film stars, some of whom he had met, as well as discussing in some detail his involvement in casting choices and screenplay ideas he had contributed to several of the films made from his work. Films clearly played a role in his life and, to some extent, played a part in his work as well.</p>
+<p>One of the things for which Hemingway has been criticized, particularly in the decades following his death, is his portrayal of macho characters. Many scholars and feminists have commented that Hemingway’s work has embraced the stoic, unfeeling masculine stereotype. However, though his heroes are nearly always strong men who are not weepily sentimental, Hemingway has usually found a way to show the pain these men feel. In fact, part of his interest in writing about these characters is so he can use them to comment on their macho posturing. Again, ‘‘In Another Country’’ can serve as an example of this. Hemingway shows the story’s narrator spending time with a group of young Italian officers who are proud of the masculine bravado they have demonstrated in battle. He writes, however, that they are emotionally ‘‘detached,’’ unable to express their innermost feelings about the tragedies they have witnessed and experienced. He contrasts their behavior with that of the Italian major, a man who, in the end, is held up as a braver man for giving up his controlled facade, for coming to terms with the deep loneliness and isolation of death and the loss that it entails. Even when the major cries, that most unmacho of acts, the author does not criticize him; in fact, Hemingway seems to be rather approving, as long as the tears do not relate to cowardice.</p>
+<p>Source: Michael Zam, “Overview of ‘In Another Country,’” for Short Stories for Students, The Gale Group, 2000. Zam has been an associate professor at Fordham College and New York University, as well as a writer for the Harvard Gay and Lesbian Review and Details magazine.</p>
+<h3 id="hemingways-invisible-hero-of-in-another-country">Hemingway’s Invisible Hero of “In Another Country”</h3>
+<p>Hemingway’s ‘‘In Another Country’’ offers unusual evidence of the essentially heuristic and therapeutic nature of his storytelling. His thematic concern—that a person ‘‘find things he cannot lose’’—takes on considerable significance when the distinction between the protagonist and the first-person narrator is clarified. It is the protagonist who, along with the Italian major, faces the wall of despair and death after being wounded in Italy during World War I. It is the narrator, however, who epitomizes Hemingway’s hero in this story. True heroism is not passive. True heroism is the action of the creative artist, the storyteller of ‘‘In Another Country’’ who discovers a ‘‘window’’ through which he can see beyond the ‘‘wall’’ facing those who suffer permanent wounds.</p>
+<p>Confusion is understandable because Hemingway’s narrator in this story is ‘‘invisible,’’ that is, nameless, and he tells his own story. Moreover, he never calls attention to himself as narrator except indirectly in comments which establish a temporal distance between his past experience and his narration. Because of the narrator’s ‘‘invisibility,’’ readers can easily fail to see his formal function, therefore focusing their attention exclusively upon the narrator’s younger self, the protagonist. Consequently, they see the young protagonist as one who is merely passive in his painful acceptance of his lack of bravery and is respectful in his observance of the major’s resignation to despair. To overlook the formal function of Hemingway’s invisible first-person narrator, however, represents a failure to apprehend the story as a total imaginative act. It is the narrator who looks back upon himself in a conflict which he, as protagonist, could not understand. As protagonist, he acted blindly, victimized as he was by his unrecognized responses to the world around him. ‘‘In Another Country,’’ therefore, is not the protagonist’s story, nor is it the major’s. It is the narrator’s, and the way into the story is through an effort to understand his concern in the conflict he recalls. The revelation of the story, then, can be seen only through the consciousness of the invisible first-person narrator who—in the creative act of giving a form and a focus to his own past experience—resolves a conflict implicitly disclosed in the process of narration.</p>
+<p>That the narrator is an older man looking back over the years can be established in two ways. First, and more obviously, the narrator employs the past tense. Secondly, when he tells about the four soldiers with whom he used to walk in the streets of Milan, he offers an explicit statement about the temporal distance between his narration and his past experience. One of the young soldiers wears a black silk handkerchief to cover his horribly mutilated face. The narrator comments upon him in such a way as to indicate a knowledge extending years beyond the action of the story:</p>
+<blockquote>
+<p>They rebuilt his face but he came from a very old family and they could never get the nose exactly right. He went to South America and worked in a bank. But this was a long time ago, and then we did not any of us know how it was going to be afterward.</p>
+</blockquote>
+<p>The failure to consider the function of a narrator who is invisible is, I have said, understandable. All of his attention is focused upon himself as a young man in his encounters with therapeutic machines, ‘‘hunting hawks,’’ and a major. Nonetheless, whatever the narrator’s story discloses grows out of the way in which the machines, the hunting hawks (those men who were brave), and the major participate in the resolution of a conflict within the narrator’s mind.</p>
+<h5 id="i">I</h5>
+<p>One way to focus the conflict is to examine the structure of the story. What the narrator remembers can be divided into five sections. With the possible exception of the last paragraph of the story, which is expository, sharp transitions help to set off each section. In the first two-paragraph section, the narrator begins to focus his attention in the process of recollection. Moving from his memory of specific sensations in the streets of Milan to the various routes he and his friends used to walk to the hospital, the narrator allows us to enter his consciousness, thereby enabling us to experience his sense of isolation as he walks to the new pavilions, which were beyond the old hospital and the courtyard where the funerals begin, and to ‘‘the machines that were to make so much difference.’’ The machines which were to heal their wounds have not, of course, made much difference at all. If we think of the first section figuratively, as a recalled movement toward healing, we will have a way of conceptualizing each section of the story as a movement toward a healing which fails.</p>
+<p>Before moving to the second section, let us return to the first sentence: ‘‘In the fall the war was always there but we did not go to it anymore.’’ The fall is the season of nature’s dying, and it is also the season for killing game, or hunting. Beyond the cluster of associations recalled by the narrator as he remembers his walks by the shops is the larger and seemingly interminable context of the war. That he says ‘‘we did not go to it anymore’’ reveals the first element of separation. In other words, the narrator recollects that he and his four wounded friends are soldiers who are no longer participating in the action of the war. As we learn in section three, the protagonist is separated from more than the war; he is cut off from his ‘‘hunting hawk’’ friends who had earned their medals for bravery. Their only common ground lies in their having been wounded and in their efforts to recover from their wounds by going to the ‘‘healing machines.’’</p>
+<p>The second section of the story, which begins with the, doctor’s asking the protagonist what sport he played before being wounded, serves to emphasize a sense of the futility of the therapy. Both the protagonist and the major he encounters are damaged, and they realize that they are permanently damaged. Juxtaposed with their awareness of futility is the ineffectual but well-meaning effort of the doctor to persuade them that the machines are going to make them completely whole again. The language the doctor uses—‘‘Did you practice a sport?’’ and ‘‘You will play football again like a champion’’—implies a lack of knowledge about sports and calls into question his judgment about the protagonist’s full recovery. When the doctor tells the protagonist that he will play football better than ever, the narrator conveys the impossibility of such restoration by simply stating that his calf had been completely shot away. Also played down is the intense pain which he must have felt when the machine lurched, indicating that its force met the resistance of the knee that would not bend. The major, moreover, is not under any illusions about his hand, which is reduced to the size of a baby’s. His fencing days are over, and not all of the photographs in the world can convince him that he will recover fully from his wound. If the first section is seen as a movement toward the ineffectual healing machines, the second section can be seen as a movement away from false hope toward no hope.</p>
+<p>By regarding the first two sections of the story as movements of consciousness, the narrator’s concern—what he is seeking—becomes clearer. Each movement of consciousness happens against the backdrop of the ‘‘world’’ of the story—a world at war, a world of destruction and death. The narrator’s concern is how to participate in a world that inflicts wounds from which there is no permanent recovery. His football and soldiering are behind him, and the first of three efforts to recover has failed. The healing machines cannot heal permanent wounds. And the narrator recalls that it is the major who faced head-on the fact of his condition.</p>
+<p>Although the major is not mentioned in section three, this scene immediately follows his flat assertion that he has no confidence in the healing machines. The transition is so abrupt that we are likely to overlook how the major’s honesty influences the narrator’s recollection of relationships with the other wounded boys. In fact, the progression of the narrator’s use of the first-person plural ‘‘we’’ to the singular ‘‘I’’ in this section is framed by the major’s attitude toward the machines and his attitude toward bravery in the first sentence of section four.</p>
+<p>In the first paragraph of section three, the narrator tells us about the sense of camaraderie which he and the other three boys experienced as they were ridiculed when they walked the streets of Milan. The narrator proceeds in the next paragraph to tell us that they had all received medals except the boy who wore the black silk handkerchief over his face. He had not been at the front long enough to get any medals. As the narrator focuses upon his relationships with the other young soldiers who had been wounded, he recalls his sense of alienation: ‘‘We were all a little detached, and there was nothing that held us together except that we met every afternoon at the hospital.’’ The only bonds among the men were created by the dislike and discourtesy of the people in the streets and the universally understandable appetites that could be satisfied at the Cova, where in war or peace the girls were ‘‘patriotic.’’ The narrator’s comment that he believes the girls are still ‘‘patriotic’’ is a minor intrusion; however, it serves to establish further his distance in time from the past action.</p>
+<p>The shift from ‘‘we’’ to ‘‘I’’ in the fourth paragraph of the third section reveals that the second method of participation within a context of struggle is unsatisfactory. Just as the therapy machines cannot fully restore wholeness of body, neither can other people be encountered in any satisfying relationship when the basis for human encounter is an ideal one cannot live up to. The narrator recalls that his failure to earn medals for bravery under fire had separated him from those who had. He had become a friend against outsiders, but he knew that he was not really one of the ‘‘hunting hawks.’’ After the cocktail hour he could imagine he had been brave enough to earn citations; but in the cold air walking home he knew that he would never have been brave and that he was afraid to die. In other words, under the warming effects of alcohol he could, like the well-meaning doctor, avoid facing the fact of his estrangement. In the cold air of the street, however, he is like the major who coldly faces the fact of his condition.</p>
+<p>We can now see that the narrator is recalling two aspects of his former condition of estrangement and despair; furthermore, we can realize that he is ‘‘meeting himself’’—from the ground of a present crisis—in the events of his past. His process of focusing his consciousness upon these particular events implicitly discloses his concern about a present condition of estrangement and despair which is epitomized in his memory of the healing machines, the relationships with the other wounded soldiers, and, particularly, the major. The narrator first recalls wounds which cannot be healed by the products of modern science, the therapy machines. He then recalls his sense of being cut off from those men who embodied for him an ideal of selfhood which he felt—and continues to feel—incapable of attaining. At this point in the story, however, the ideal is not articulated. The narrator does this in the next paragraph.</p>
+<p>In the fifth paragraph of section three, the image of the hunting hawk emerges in the consciousness of the narrator as a symbol for that capacity to function within a natural order characterized by struggle and death. The hunting hawk is a bird of prey, capable of sweeping down for the kill, swiftly and instinctively. The narrator remembers how the hawk had become for him an ideal of selfhood from which he had been hopelessly estranged. Significantly, his friend among the other boys was the one who had been wounded before he was tried under pressure.</p>
+<h5 id="ii">II</h5>
+<p>The context of the war is only one of two contexts in the story. As we noted, the war serves as a metaphor for the natural order within which people struggle and die. The second context is the hospital, within which the issue at hand is the healing of those persons who have been wounded within the war-context. By extending these metaphors, we might suggest that the narrator’s stake in his narrative is the resolution of how to be healed or how to be rejoined to a world characterized by destruction and death. The healing machines could not make him physically whole again, and he recalls that he could never be a hunting hawk; consequently, two of the three modes of survival in a destructive element failed to work.</p>
+<p>Juxtaposed with the narrator’s certainty that he was not a hunting hawk is his first comment about the major in section four: ‘‘The major, who had been a great fencer, did not believe in bravery.’’ Bravery, that quality possessed by the hunting hawks, is of no importance to this man. What is important to him is what the narrator derives from him: precision and discipline. These qualities can no longer be exercised in fencing, but they can be in communication. In contrast with the doctor who uses false photographs to create the illusion of hope, the major calls things as he sees them and insists upon correct grammar. We might observe, then, that at this point in his narration the narrator remembers his initial regard for the major as a man of precision and authority.</p>
+<p>By keeping in the foreground our primary effort to discover the narrator’s stake in his re-enacted experience, we can see that he is groping for more than he has recalled thus far in his narrative. The major has given him a greater respect for precision and discipline in communication, but he has given him much more than this. In looking back, the narrator recalls that the major had also been engaged in finding a satisfactory mode of participating in the destructive element of life. He had acquired great competence as a fencer, and he had proved competent enough as a hunting hawk to become a major. Both accomplishments represent only partial and temporary modes of participation. The major had been deprived of his fencing skill by a wound, and the wound had forced him beyond ‘‘hawkery,’’ as a mode of participation, to human love. Furthermore, the major had so valued the possibility of participation in life through human love that he waited until he knew he was permanently out of the war before he married.</p>
+<p>Close to the end of the story the narrator recalls an incident which represents a turning point in his relationship with the major. Sensing that his young wife is going to die, the major tells the protagonist that he is a fool to hope to get married. Here again, the narrative perspective from which we are viewing this situation enables us to see more than a passive young man being instructed by an older man. We can now grasp what the major was trying to tell him: that there is no single way, once one has been wounded, to be rejoined in life—not by fencing, nor by hawkery, nor even by human love. The narrator learns that there are no things he cannot lose. And he also learns (when he recalls that the major had told him not to address him as ‘‘Signor Maggiore’’) that the possibility of death removes the distinction of rank, and there is now a common condition.</p>
+<h5 id="iii">III</h5>
+<p>Thus, we can say that the ground upon which the narrator stands is similar to the major’s at the end of the remembered experienced. Wounded by life, the storyteller recalls his earlier predicament as a young man physically wounded in the war. Struggling, also, for a way to heal his psychic wound—his sense of estrangement in the present—he recalls the context of healing in the new pavilions at the hospitals in Milan. Just as his body could not be restored to wholeness by the machines, neither could his estrangement as a young man be overcome by trying to be a hunting hawk. The death of the major’s wife, therefore, is intensely relevant to the narrator’s present condition. At the conclusion of his recalled experience, the death of a young woman seemed to seal off all avenues of recovery from the damage done to the major by life. Even human love cannot be relied upon as a way of re-entering the world.</p>
+<p>All that can be done is what the major has done; what the major has done can easily be overlooked, however, because Hemingway’s narrator forces each sentence in his story to carry heavy freight. For example, the major had earlier in the story sat at the machine and looked at the wall. At the end of the story, though, he sat at the machine and looked out the window. If we briefly retrace what the narrator recalls, we can see that the major’s progression toward his particular end is similar to the boy’s; and we can see that it is the narrator who welds both together in a story. The major who looks at the wall has gone through fencing and hawkery, and is facing the death of his wife. The young boy has gone through football, has failed at hawkery, and does not know where to go from here—except that he considers the possibility of marriage when he returns to the States. Although the narrator is distinct from the protagonist, he sees his present crisis epitomized in his earlier experience. If we realize that the narrator is ‘‘meeting himself’’ in his remembered experience, then we can grasp his concern in his narrative. Incidents recalled express his concern in the present, and the end of his narrative becomes more significant if viewed from this perspective.</p>
+<p>The death of the major’s wife shatters the major’s rigid carriage and enables him to move outward toward the boy in a way that was not possible before. This last wound, the death of his wife, forces the major beyond the wall, that is, to the world beyond the confines of his personal and ineffectual therapy. All of these elements, of course, are remembered by the narrator. And not the least of these is what the major has gone through. The narrator’s concern seems to be what can be done when nothing seems to assure complete recovery from the condition of being wounded. Once wounded, he realizes, one can never be the same; but perhaps the major points the direction for what can be done—in fact all that can be done. Instead of facing the wall, one would look out the window. The world lies out there to be seen, thought about, and then rendered into an art form—that activity which makes possible a maximum ordering of his life, a maximum association with others, beyond his personal condition of estrangement. The paradoxical truth, however, is that not until one is wounded does one see that world and become able to participate in it.</p>
+<p>The narrator participates in the world by telling his story. We do not see this, however, if we focus upon the major as a figure of despair and the young boy as a passive witness. By focusing upon the invisible first person narrator who has relived his past, we can realize that he is no merely passive witness, and that he is the focal point in the story. For the narrator has turned to the only method of healing available to him, a method of healing which transcends that of the major’s—the creative act of giving a form and focus to his own condition of estrangement, as honestly and precisely as possible. The narrator, at the end, is like the major in a figurative sense. He is no longer walled in by the impossible ideal of hunting hawkery, which excludes and therefore cuts off association and participation in the human community at a human level. Like the major, at the end of the story, the narrator is not concerned with efforts, no matter how well-meaning, to create the illusion of hope for full recovery. Nor does human love, even, serve as a lasting mode of participation: love can be killed by any turn of the natural order.</p>
+<p>The last word of this story is, significantly, ‘‘window.’’ And that window looking out upon the world offers the only release from the damage done by a permanent wound and the realization that there can never be a complete recovery. The world beyond the major’s window is the common ground between the major and the boy, and it is the common ground between the narrator and the reader.</p>
+<p>Source: Forrest Robinson, “Hemingway’s Invisible Hero of ‘In Another Country,’’’ in Essays in Literature, Vol. XV, No. 2, Fall, 1988, pp. 237–44. Forrest Robinson is affiliated with Western Illinois University.</p>
+<h3 id="httpswwwenotescomhomework-helpwhat-main-reason-ernest-hemingway-wrote-another-785876"><a data-from-md title='https://www.enotes.com/homework-help/what-main-reason-ernest-hemingway-wrote-another-785876' href='https://www.enotes.com/homework-help/what-main-reason-ernest-hemingway-wrote-another-785876'>https://www.enotes.com/homework-help/what-main-reason-ernest-hemingway-wrote-another-785876</a></h3>
+<h2 id="what-is-the-main-reason-ernest-hemingway-wrote-in-another-country">What is the main reason Ernest Hemingway wrote &quot;In Another Country&quot;?</h2>
+<p>Ernest Hemingway's short story &quot;In Another Country&quot; was first published in the collection Men Without Women and is about men recovering from wounds received in fighting on the Italian front during World War I. Above all, it appears that Hemingway was introducing a new style to fictional writing. His prose is written in a straightforward, journalistic approach, which led one critic to comment that Hemingway's writing was &quot;language sheered to the bone&quot; and Hemingway had carried the art of the reporter to the highest degree (see Hemingway: A Life Without Consequences by James R. Mellow).</p>
+<p>While critics seemed to detest Hemingway's characters and plots, they lauded his style. Joseph Wood Krutch called the stories in Men Without Women &quot;sordid little catastrophes in the lives of very vulgar people.&quot; Most of the critics, however, agreed that Hemingway's style was new and innovative. Hemingway was also experimenting at this time with his &quot;iceberg theory&quot; or &quot;theory of omission,&quot; another idea taken from newspaper reporting where a reporter has little time or space to fill in all the background of a particular story and needs to simply report the facts of the current situation. In &quot;In Another Country,&quot; the reader knows very little about the first-person narrator other than that he is an American who has been wounded in the war. Why he is an American fighting in Italy and the exact nature of his wounds are never revealed. The very next story in the collection, &quot;Hills Like White Elephants,&quot; may be the most extreme example of this theory.</p>
+<p>Another of Hemingway's stated goals was to write &quot;one true sentence,&quot; and he seems to have achieved this in the opening sentence of &quot;In Another Country&quot;: &quot;In the fall the war was always there, but we did not go to it any more.&quot; This sentence, while not giving every detail, is simple and straightforward. Finally, it may just be that Ernest Hemingway had to write. It was in his blood. It was his passion. In an interview with George Plimpton (Paris Review, 1954), Hemingway describes his process for writing, which seems to suggest that what Hemingway was doing was almost like a religion to him:</p>
+<blockquote>
+<p>You have started at six in the morning, say, and may go until noon or be through before that. When you stop you are as empty, and at the same time never empty but filling, as when you have made love to someone you love. Nothing can hurt you, nothing can happen, nothing means anything until the next day when you do it again. It is the wait until the next day that is hard to get through.</p>
+</blockquote>
+<h3 id="httpswwwenotescomhomework-helpwhy-narrator-milan-ernest-hemingways-another-466690"><a data-from-md title='https://www.enotes.com/homework-help/why-narrator-milan-ernest-hemingways-another-466690' href='https://www.enotes.com/homework-help/why-narrator-milan-ernest-hemingways-another-466690'>https://www.enotes.com/homework-help/why-narrator-milan-ernest-hemingways-another-466690</a></h3>
+<h2 id="why-is-the-narrator-in-milan-in-ernest-hemingways-in-another-country">Why is the narrator in Milan in Ernest Hemingway's &quot;In Another Country?&quot;</h2>
+<h4 id="1-d-reynolds-certified-educator">1) D. REYNOLDS | CERTIFIED EDUCATOR</h4>
+<p>The American narrator of &quot;In Another Country&quot; had gone to Europe to fight in World War I. He is in Milan, Italy, now, to get physical therapy and rehab for a war wound. He goes every day to a hospital that specializes in treating injured soldiers. He describes his injury and physical therapy as follows:</p>
+<blockquote>
+<p>My knee did not bend and the leg dropped straight from the knee to the ankle without a calf, and the machine was to bend the knee and make it move as riding a tricycle. But it did not bend yet, and instead the machine lurched when it came to the bending part. The doctor said:&quot; That will all pass. You are a fortunate young man. You will play football again like a champion.&quot;</p>
+</blockquote>
+<p>He meets other wounded soldiers there, such as a man who lost his nose and had to have it reconstructed, though it will it will never look the same as before.</p>
+<p>Like the others in the hospital, the narrator's physical wound is representative of the deeper psychological wounds they have all suffered--no matter what physical treatment they get, none of them will be the same. The narrator himself is alienated and numbed from his experiences and can only speak in a flat, detached way of his life in Milan. Today we would probably say he is suffering from post-traumatic stress disorder. Even if he can go back to the United States and play football again, it clearly will never be the same for him again because of his psychic wounds.</p>
+<h4 id="2-payal-khullar-certified-educator">2) PAYAL KHULLAR | CERTIFIED EDUCATOR</h4>
+<p>The unnamed narrator in Ernest Hemingway’s much popular short story In Another Country is an American man who serves as a soldier during the First World War in Italy. While fighting in the war, the narrator gets a severe injury on his knee. Actually, he gets wounded accidently and not because of a heroic act in the war. In any case, he is given a few bravery medals and is sent to Milan, Italy to take rest as well as to recover from this physical injury. Thus, he is in Milan for rehabilitation. The narrator, along with five injured Italian soldiers, receives some physical therapy treatment with the help of machines in a local hospital in Milan. Although he goes to the hospital daily in the afternoon to get the treatment done, he has little faith in the medical machines.</p>
+<h3 id="httpswwwenotescomhomework-helpernest-hemingways-another-country-how-emotions-599529"><a data-from-md title='https://www.enotes.com/homework-help/ernest-hemingways-another-country-how-emotions-599529' href='https://www.enotes.com/homework-help/ernest-hemingways-another-country-how-emotions-599529'>https://www.enotes.com/homework-help/ernest-hemingways-another-country-how-emotions-599529</a></h3>
+<h2 id="in-ernest-hemingways-in-another-country-how-does-the-author-convey-events-and-emotions">In Ernest Hemingway’s “In Another Country,” how does the author convey events and emotions?</h2>
+<p>In order to understand Ernest Hemingway's writing one must know more about his philosophy. Hemingway endeavored to write truthfully and often said he wanted to write &quot;one true sentence.&quot; Hemingway also believed in omitting certain events and emotions from his writing. He explains,</p>
+<blockquote>
+<p>&quot;It was a very simple story called “Out of Season” and I had omitted the real end of it which was that the old man hanged himself. This was omitted on my new theory that you could omit anything if you knew that you omitted and the omitted part would strengthen the story and make people feel something more than they understood.&quot;</p>
+</blockquote>
+<p>Once you understand Hemingway's philosophy it is easier to see how he conveys events and emotions. One thing Hemingway omits from the story &quot;In Another Country&quot; is a direct statement of the pain and emotional toll the war has taken on the men portrayed in the story. Instead, he hints at the death caused by the war in describing the dead animals which hang in the butcher shops and how cold and windy the weather has been.</p>
+<p>Similarly he doesn't directly tell us that Nick Adams and the Italian major will probably never be physically the same again. The doctors are employing new machines which promise miracle results but Nick and the major don't believe it. At the end of the story photographs showing good results fail to impress the major who has lost both the strength in his hand and his young wife:</p>
+<blockquote>
+<p>&quot;The photographs did not make much difference to the major because he only looked out the window.&quot;</p>
+</blockquote>
+<p>In this &quot;one true sentence&quot; Hemingway expresses the major's emotions. He is lost. His wife is dead and his ability to continue his fencing career is over. He is obviously suffering from a deep depression.</p>
+<p>Nick too is not without emotional scars. Hemingway omits the deep shame and sense of cowardice that Nick must have felt when he showed the citations for his medals to the three Italian soldiers who had been wounded in battle:</p>
+<blockquote>
+<p>&quot;I showed them the papers, which were written in very beautiful language and full of fratellanza and abnegazione, but which really said, with the adjectives removed, that I had been given the medals because I was an American. After that their manner changed a little toward me, although I was their friend against outsiders. I was a friend, but I was never really one of them after they had read the citations, because it had been different with them and they had done very different things to get their medals. I had been wounded, it was true; but we all knew that being wounded, after all, was really an accident.&quot;</p>
+</blockquote>
+<p>Nick leaves unstated the reason he got the medals other than that he was wounded. Hemingway himself was wounded on the Italian front by mortar fire while procuring chocolate and cigarettes for the men on the front line. For both Nick and Hemingway it must have been terribly disconcerting to have not actually been wounded in the line of battle like the Italian soldiers. He describes one of the soldiers:</p>
+<blockquote>
+<p>&quot;The tall boy with a very pale face who was to be a lawyer had been a lieutenant of Arditi and had three medals of the sort we each had only one of. He lived a very long time with death and was a little detached.</p>
+</blockquote>
+<p>Eventually Nick stops hanging out with the three soldiers. He explains,</p>
+<blockquote>
+<p>&quot;The three with the medals were like hunting-hawks; and I was not a hawk, although I might seem a hawk to those who had never hunted; they, the three, knew better and so we drifted apart.&quot;</p>
+</blockquote>
+<p>Nick never offers a direct admission of guilt over feeling like a coward but nevertheless we feel that he thinks less of himself in the presence of the soldiers.</p>
+<p>Hemingway employs his philosophy of omission in several of his works, most notably in The Sun Also Rises where Jake Barnes has been basically castrated in World War I. Instead Hemingway inadvertently shows us Jake's injuries through veiled dialogue and the use of the steers in the Pamplona bullfighting scenes.</p>
+<h3 id="httpswwwenotescomhomework-helpwhat-doctor-thought-major-narrator-another-country-748228"><a data-from-md title='https://www.enotes.com/homework-help/what-doctor-thought-major-narrator-another-country-748228' href='https://www.enotes.com/homework-help/what-doctor-thought-major-narrator-another-country-748228'>https://www.enotes.com/homework-help/what-doctor-thought-major-narrator-another-country-748228</a></h3>
+<h2 id="what-do-you-think-the-doctors-thoughts-about-the-major-and-the-narrator-are-in-the-short-story-in-another-country-by-ernest-hemingway">What do you think the doctor's thoughts about the major and the narrator are in the short story &quot;In Another Country&quot; by Ernest Hemingway?</h2>
+<h4 id="1-tyler-larue-certified-educator">1) TYLER LARUE | CERTIFIED EDUCATOR</h4>
+<p>The doctor thinks that the major and the narrator do not believe in the healing power of the machines. The purpose of the machines is to cure the injured soldiers of some of their disabilities. For instance, the narrator’s “knee does not bend, and the leg drops straight from the knee to the ankle without a calf, and the machine is supposed to bend the knee and make it move.” The doctor knows that the narrator and the major are pessimistic of the ability of the machines to restore partial, if not full, use of their deformed limbs. This is why he continually encourages them. He tells the narrator things like “What did you like best to do before the war? Did you practice a sport? You will be able to play football again better than ever.” He shows the major a photograph of a withered hand that transforms after machine therapy and asks him whether he has confidence that his hand too will undergo the same transformation—a question the major answers in the negative.</p>
+<p>Even though the major does not believe in the machines, he is a regular visitor at the hospital. One day, his wife dies and stressed out, he openly talks about his disbelief in the machines. He says that the machines are “an idiotic idea, a theory like another.” Afterward, he misses three consecutive hospital visits, and when he does start to visit again he finds that the doctor has framed and put up photographs of “all kinds of wounds, before and after they had been cured by the machines.” In front of the machine used by the major, there are three photographs of deformed hands, just like the major’s, fully restored. The doctor understands that the major is going through a very difficult time and that his faith in the treatment given in the hospital has faltered. He hopes that the photographs on the wall can help boost the morale of all the patients in the hospital so that they follow through with the treatment.</p>
+<h4 id="2-mwestwood-ma-certified-educator">2) MWESTWOOD, M.A. | CERTIFIED EDUCATOR</h4>
+<p>The doctor of &quot;In Another Country&quot; realizes the narrator and especially the major do not believe his encouragements that their injuries will be healed and they will return to normal. In fact, these men are now rather detached from the war, and there is no longer anything holding them together except that they meet at the hospital in the afternoons.</p>
+<p>As an American, the narrator has only been connected to the other men because he fought with them in the war, but now that they do not fight in the war anymore, he is detached from these men, separated by nationality and his medals. For, he has been given the medals &quot;because I was an American,&quot; whereas the Italian soldiers demonstrated uncommon valor.</p>
+<p>At the hospital, the narrator and the major are put on the machines in which they have no faith, despite the pictures and the encouragement of the doctor. These machines are new and there have yet to be war injuries that prove these devices' worth, only pictures from industrial accidents that the doctor shows them.</p>
+<p>&quot;One day the major said it was all nonsense.&quot; He contends that the concept of these machines has been an &quot;idiotic idea. . . a theory, like another.&quot; Nevertheless, he comes every day to the hospital and looks stoically at the wall as the machine's straps on his once great fencing hand thump up and down on the now withered hand.</p>
+<p>It is probably apparent to the doctor that the major is suffering within himself because he has lost his prestige as a fencer and his military position no means much since he can no longer command. One day, the major pulls his withered hand out of the machine and shouts for it to be turned off.</p>
+<p>The major apologizes to the American, who is near him: &quot;I am so sorry. . . My wife has just died. You must forgive me.&quot; Indeed, no machine can heal the wounds of the soul or even his hand. &quot;I cannot resign myself,&quot; the major says of his tragedy. &quot;I am utterly unable to resign myself.&quot;<br>
+The narrator, too, doubts whether the machines will help the major or his own injured knee. He knows he and the others &quot;are the first to use the machines.&quot; Therefore, the photographs the doctor has hung &quot;do not make much difference to the major,&quot; who now looks absently out the window.</p>
+<h3 id="httpswwwenotescomhomework-helpanalyze-the-tone-of-the-short-story-in-another-705910"><a data-from-md title='https://www.enotes.com/homework-help/analyze-the-tone-of-the-short-story-in-another-705910' href='https://www.enotes.com/homework-help/analyze-the-tone-of-the-short-story-in-another-705910'>https://www.enotes.com/homework-help/analyze-the-tone-of-the-short-story-in-another-705910</a></h3>
+<h2 id="analyze-the-tone-of-the-short-story-in-another-country-which-specific-words-influence-the-tone-of-the-story-how-does-the-tone-impact-your-overall-understanding-of-the-text">Analyze the tone of the short story &quot;In Another Country.&quot; Which specific words influence the tone of the story? How does the tone impact your overall understanding of the text?</h2>
+<h4 id="1-julianne-hansen-ma-certified-educator">1) JULIANNE HANSEN, M.A. | CERTIFIED EDUCATOR</h4>
+<p>Words such as &quot;cold,&quot; &quot;empty,&quot; &quot;detached,&quot; and &quot;afraid&quot; help to convey a tone that is bleak and supports themes of isolation and loss. In a cold, fall setting during World War I, the ending of &quot;In Another Country&quot; is a reminder that death is often unpredictable.</p>
+<p>In &quot;In Another Country,&quot; Hemingway constructs a bleak tone to propel themes of isolation and loss.</p>
+<p>The story is set in the fall in Milan, where it is &quot;cold&quot; and &quot;the dark came very early.&quot; The wildlife around Milan is described as &quot;stiff&quot; and &quot;empty.&quot; The hospital, a place of healing, has &quot;funerals starting from the courtyard,&quot; and the constant threat of death presses in on the men who are recovering there.</p>
+<p>Although the narrator finds a group of men to spend time with, he notes that they are all &quot;a little detached.&quot; As they walk together in the streets, the narrator understands that &quot;the people...disliked us, did not understand.&quot; When asked about his medals, the narrator's description conveys that he received them because he is an American, and &quot;after that their manner changed a little toward&quot; him.</p>
+<p>The narrator notes that he is &quot;very much afraid to die.&quot; He is verbally reprimanded by the major for expressing his desire to marry one day, the major telling him that he is a &quot;fool&quot; and that &quot;he should not place himself in a position to lose.&quot; The narrator then learns that the major's wife his just died of pneumonia and that &quot;no one expected her to die.&quot;</p>
+<p>Hemingway uses bleak and hopeless words in a cold and desolate setting to describe the loss innate in war. Loss and pain surround the men, and just when they feel they have personally survived, the major is forced to confront unexpected and terrible loss in the death of his young wife. The ending of the story enforces the idea that death is often unpredictable, and life can be extinguished in the most improbable of circumstances.</p>
+<h4 id="bridgett-sumner-ma-certified-educator">BRIDGETT SUMNER, M.A. | CERTIFIED EDUCATOR</h4>
+<p>Taken as a whole, the tone of &quot;In Another Country&quot; could be called dispassionate. The narrator could be said to be offering &quot;reportage&quot; in a journalistic style that allows the emotional impact to come from the reader's own interpretation. For instance, in the first sentence, the narrator says: &quot;In the fall the war was always there, but we did not go to it any more.&quot; He does not offer any direct commentary; he simply states the fact that the soldiers are not in combat.</p>
+<p>The reader quickly learns that the story is concerned with injured soldiers at a European hospital and that some die.  Again, this is only observed as: &quot;There were usually funerals starting from the courtyard.&quot; There is no description of the fallen, why they fell, who attends them, or whether their deaths mattered.  The funerals are simply presented as part of the landscape.</p>
+<p>To better understand how the tone impacts the text, it would be useful to know about what Hemingway called &quot;the iceberg theory.&quot; He used this metaphor to communicate his belief that the meaning of the story should be concealed under the surface.  To him, meaning was best conveyed to the reader implicitly. By not coloring the narrative with overt emotions, he allowed the characters and situations to be shaped by the reader's perception. Hemingway knew he did not have to tell the reader that war was devastating, wasteful, and tragic; he could do it by writing sentences like the story's final line:</p>
+<blockquote>
+<p>&quot;The photographs did not make much difference to the major, because he only looked out of the window.&quot;</p>
+</blockquote>
+<p>Hemingway relies on the reader's ability to recognize a man who has been deeply traumatized by loss by describing the vacancy of his gaze and disconnection from the people and machines who try to help him.</p>
+<h4 id="jason-lulos-certified-educator">JASON LULOS | CERTIFIED EDUCATOR</h4>
+<p>In the opening paragraph, the narrator mentions &quot;cold&quot; twice and also mentions the season (fall) two times. This opening scene contains dead animals hanging outside of the shops. This might be a typical autumn day in Milan. But it is during the war (the narrator notes this). The images of cold and death reflect these aspects of war. So, there is a dark tone to the opening paragraph but Hemingway adds some pleasantness and this perhaps symbolizes the narrator's relief of being away from battle:</p>
+<blockquote>
+<p>Then the electric lights came on, and it was pleasant along the streets looking in the windows.</p>
+</blockquote>
+<p>In the first sentence, the narrator says &quot;the war was always there, but we did not go to it anymore.&quot; This suggests a conflicting tone. The menace and memory of the war is always present but the narrator and his fellow soldiers are away from it so there is some solace in that. But the presence of the war and its affects override any solace or pleasantness in Milan.</p>
+<p>Although they are away from battle and in a hospital to be cared for, note the sarcasm when the narrator describes the hospital equipment where they &quot;sat in the machines that were to make so much difference.&quot;</p>
+<p>The major, in particular, shows bravery and determination even though he has no real hope of a decent recovery. Upon learning that his wife has just died, the major has a slight breakdown. He scolds the narrator for wanting to get married. Note the hopelessness in his rant:</p>
+<blockquote>
+<p>If he is to lose everything, he should not place himself in a position to lose that. He should not place himself in a position to lose. He should find things he cannot lose.</p>
+</blockquote>
+<p>The major, the narrator, and perhaps the others are at this hospital to get better. But there is a prevailing hopelessness initiated by the war that keeps suppressing their spirits.</p>
+</div></div>
+					</body>
+				</html>
+			
